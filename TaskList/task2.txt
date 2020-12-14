@@ -1,0 +1,5 @@
+1. 用openCV把之前加载进去的彩色图片转换成灰阶图（Grey Scale Image），显示在UI上并保存图片
+2. 用openCV把灰阶图二值化（binary image），显示在UI上并保存图片
+3. 创建一个github account，上传工程代码到github（注意只上传source code！！！）
+4. 下载一个代码管理工具（TortoiseSVN，TortoiseGit，SourceTree等）
+5. 了解代码管理，熟悉checkout/update/commit等操作
