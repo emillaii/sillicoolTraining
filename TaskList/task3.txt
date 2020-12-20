@@ -1,0 +1,80 @@
+Scenario: 
+
+In automation machine process, we normally will use tray map to represent the current status of the units. And the visualization of the tray map is useful for operator to know the product unit status and roughly estimate the normality of the machine operation.
+
+In this task, we need to define the tray map struct and unit status and use opencv to draw the UI map.
+
+
+1. Define the Unit status struct 
+
+#define IDLE_UNIT CV_GREY
+#define GOOD_UNIT CV_GREEN
+#define NG_UNIT CV_RED
+#define MISSING_UNIT CV_BLACK
+#define ERROR_UNIT CV_PINK
+
+struct Unit 
+{
+	int status
+	string timeStamp
+	int rowId
+	int colId
+}
+
+status = 0 - Idle 
+		 1 - GOOD
+		 2 - NG
+		 3 - MISSING
+		 4 - ERROR 
+
+TimeStamp is the last status update time 
+
+2. Define the Tray class
+
+Class Tray 
+{
+	Array of Unit
+	int row
+	int col
+	String timeStamp
+}
+
+TimeStamp is the tray initalization time 
+
+#During the intialization, user can define the number of row and col in tray, and all the created unit is in IDLE state. 
+
+(0, 0) is at the upper left corner
+
+
+
+(0,0) (1,0) (2,0)........(n-1,0)
+.                          . 
+.                          .                          
+.                          .
+.                          .
+.                          .
+.                          .
+.                          .
+.                          .
+(0,m-1)..................(n-1,m-1)
+
+
+
+3. Use opencv to create the JPG to represent the tray and show in the UI.
+
+- There is a button to reset the tray map 
+- There is a button to randomize the unit status for testing purpose. 
+- You can also create any creative idea to show your work and prove this is working. 
+
+4. Final Result 
+
+- There is a button to save the current status of the tray map in JPG with the csv with the status of the tray and unit 
+
+
+Tray, TimStamp, row, cols 
+
+......
+
+Unit, TimeStamp, rowId, colId, status
+
+......
